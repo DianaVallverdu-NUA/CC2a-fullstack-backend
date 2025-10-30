@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 
-let counter = 0; 
+let counter = 0;
 
 // create express app & choose port
 const app = express();
@@ -20,7 +20,12 @@ app.get('/', (req, res) => {
 
 // counter
 app.get('/counter', (req, res) => {
-  res.send({counter: counter});
+  res.send({ counter: counter });
+})
+
+app.post('/counter', (req, res) => {
+  console.log(req.body);
+  res.send({ message: 'This method has not been implemented yet' })
 })
 
 // start server
