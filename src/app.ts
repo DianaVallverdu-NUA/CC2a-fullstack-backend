@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 let counter = 0;
 
@@ -17,6 +18,10 @@ app.use(cors(corsOptions));
 app.get('/', (req, res) => {
   res.send({ message: 'Hello World!' })
 })
+
+// setup JSON & body Parser
+app.use(bodyParser.json()); // parse json requests
+app.use(bodyParser.urlencoded({ extended: false })); // parse url encoded requests
 
 // counter
 app.get('/counter', (req, res) => {
