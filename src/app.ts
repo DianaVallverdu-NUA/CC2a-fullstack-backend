@@ -2,11 +2,24 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-let counter = 0;
 
 // create express app & choose port
 const app = express();
 const port = 3000;
+
+app.use(cors({
+  origin: "https://cc-2a-fullstack-frontend.vercel.app",
+  methods: "GET,POST,OPTIONS",
+  allowedHeaders: "Content-Type",
+}));
+
+// app.options("*", (req, res) => {
+//   res.sendStatus(200);
+// });
+
+let counter = 0;
+
+
 
 // setup CORS to allow requests from any origin
 const corsOptions = {
