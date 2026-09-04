@@ -1,23 +1,21 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "https://medium.com/@surajshende247/beginner-guide-to-setting-up-typescript-node-express-project-7ba0689ea94e",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "description": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
-    "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+  "author": "",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "serve": "node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "cors": "^2.8.5",
-    "express": "^5.2.1",
-    "vercel": "^48.12.0"
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.0",
+    "typescript": "^7.0.2"
   }
 }

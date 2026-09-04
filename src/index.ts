@@ -1,23 +1,32 @@
-import "express";
-let counter = 0;
-
-export default function handler(req: any, res: any) {
+/**
+ * If CORS problems appear, we may need to add headers:
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+ */
 
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
+import express, { type Express, type Request, type Response } from "express";
+import { pictures, placeholder } from "./pictures.ts";
 
-  if (req.method === "GET") {
-    return res.status(200).json({ counter });
-  }
+const app: Express = express();
 
-  if (req.method === "POST") {
-    counter = req.body.counter;
-    return res.status(200).json({ ok: true });
-  }
+app.use(express.static("assets"));
 
-  res.status(405).send("Method not allowed");
-}
+app.get("/pictures", (_req: Request, res: Response) => {
+  res.send(pictures);
+});
+
+app.get("/placeholder", (_req: Request, res: Response) => {
+  res.send(placeholder);
+});
+
+app.post("/picture", (req: Request, res: Response) => {
+  console.log("received image: ", req);
+  res.send("received image");
+});
+
+app.get("/", (_req: Request, res: Response) => {
+  res.send("Hello World!");
+});
+
+app.listen(3000);
