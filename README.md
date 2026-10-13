@@ -9,7 +9,7 @@ In the workshop, we will see how to:
 
 ## Setting up the server
 
-1. Fork this repository so you have your own copy ([How To Fork](https://docs.github.com/en/enterprise-cloud@latest/pull-requests/how-tos/work-with-forks/fork-a-repo)
+1. Fork this repository so you have your own copy ([How To Fork](https://docs.github.com/en/enterprise-cloud@latest/pull-requests/how-tos/work-with-forks/fork-a-repo))
 2.  Clone your new repository to your working directory. **NOTE:** Make sure you clone **your forked** repository, **not this one**.
 3.  Open it on VSC and open a terminal in the folder.
 4.  Run the command `npm install` to install all dependencies.
